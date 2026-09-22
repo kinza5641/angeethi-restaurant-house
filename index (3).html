@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angeethi Grill House | Charcoal BBQ in Gujranwala</title>
+<meta name="description" content="Tikka, seekh kebab and karahi cooked over real charcoal. Dine in, take away, or order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF6EE; --surface:#FFFFFF; --ink:#1B2B2A; --muted:#566664; --line:rgba(27,43,42,.16);
+  --teal:#0B4F4A; --teal-2:#137A73; --marigold:#F4B41A; --rose:#D8345F; --cream:#FBF1DA;
+  --accent-text:#B3213F; --focus:#0B4F4A;
+  --display:"Rozha One", Georgia, "Times New Roman", serif;
+  --body:"Hind", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1F1E; --surface:#152B29; --ink:#F3EBDC; --muted:#A8B8B4; --line:rgba(243,235,220,.18);
+    --teal:#0A3D39; --accent-text:#FF8AA5; --focus:#F4B41A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1F1E; --surface:#152B29; --ink:#F3EBDC; --muted:#A8B8B4; --line:rgba(243,235,220,.18);
+  --teal:#0A3D39; --accent-text:#FF8AA5; --focus:#F4B41A;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.has-tray{padding-bottom:84px}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.on-teal :focus-visible{outline-color:var(--marigold)}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section[id]{scroll-margin-top:76px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;border:2px solid transparent;font:600 1rem/1 var(--body);text-decoration:none;cursor:pointer;transition:transform .15s ease, background-color .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--marigold);color:#1B2B2A}
+.btn-gold:hover{background:#FFC93C}
+.btn-line{border-color:rgba(251,241,218,.55);color:var(--cream);background:transparent}
+.btn-line:hover{background:rgba(251,241,218,.1)}
+.btn-teal{background:var(--teal);color:var(--cream)}
+.btn-teal:hover{background:var(--teal-2)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Header */
+.site-head{position:sticky;top:0;z-index:20;background:var(--teal);color:var(--cream)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{font-family:var(--display);font-size:1.6rem;text-decoration:none;color:var(--marigold);letter-spacing:.01em}
+.nav{display:flex;gap:26px}
+.nav a{text-decoration:none;font-weight:500;color:var(--cream);opacity:.9;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{opacity:1;border-bottom-color:var(--marigold)}
+.head-cta{padding:10px 18px;font-size:.95rem}
+
+/* Truck-art strip */
+.strip{display:block;width:100%;height:16px}
+
+/* Hero */
+.hero{background:var(--teal);color:var(--cream);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:32px;padding:56px 0 64px}
+.status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 12px;border-radius:999px;background:rgba(251,241,218,.12);font-size:.95rem;font-weight:500}
+.dot{width:10px;height:10px;border-radius:50%;background:#7CE3A1;box-shadow:0 0 0 4px rgba(124,227,161,.25)}
+.dot.closed{background:#FF8AA5;box-shadow:0 0 0 4px rgba(255,138,165,.25)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,7.2vw,5.2rem);line-height:1.04;margin:22px 0 18px;letter-spacing:-.005em}
+.hero h1 span{display:block}
+.hero h1 .l1{color:var(--marigold)}
+.hero p.lead{max-width:34rem;font-size:1.15rem;color:rgba(251,241,218,.86);margin:0 0 28px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.grill{width:100%;height:auto;display:block}
+.coal{animation:glow 2.6s ease-in-out infinite}
+.coal:nth-child(2n){animation-delay:.5s}
+.coal:nth-child(3n){animation-delay:1.1s}
+.coal:nth-child(5n){animation-delay:1.7s}
+@keyframes glow{0%,100%{opacity:.65}50%{opacity:1}}
+.smoke path{animation:drift 3.4s ease-in infinite;opacity:0}
+@keyframes drift{0%{transform:translateY(14px);opacity:0}30%{opacity:.5}100%{transform:translateY(-22px);opacity:0}}
+
+/* Sections */
+.section{padding:72px 0}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.6vw,3rem);line-height:1.1;margin:0 0 12px}
+.section-intro{max-width:36rem;color:var(--muted);margin:0 0 36px;font-size:1.08rem}
+
+/* Menu */
+.tabs{display:flex;gap:6px 28px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:28px}
+.tab{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:10px 0;font:600 1.05rem var(--body);color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--rose)}
+.tab:hover{color:var(--ink)}
+.menu-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 56px;list-style:none;margin:0;padding:0}
+.item{padding:16px 0;border-bottom:1px dashed var(--line)}
+.item-top{display:flex;align-items:baseline;gap:10px}
+.item-name{font-weight:700;font-size:1.12rem}
+.leader{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px);min-width:16px}
+.price{font-weight:700;white-space:nowrap}
+.item-desc{margin:4px 0 10px;color:var(--muted);font-size:.98rem;max-width:30rem}
+.item-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.chip{font-size:.85rem;font-weight:600;color:var(--accent-text);border:1.5px solid currentColor;border-radius:6px;padding:1px 8px}
+.add{margin-left:auto;background:transparent;border:2px solid var(--teal-2);color:var(--ink);font:600 .95rem var(--body);padding:6px 18px;border-radius:999px;cursor:pointer}
+.add:hover{background:var(--teal);color:var(--cream);border-color:var(--teal)}
+.stepper{margin-left:auto;display:inline-flex;align-items:center;background:var(--teal);color:var(--cream);border-radius:999px}
+.stepper button{width:38px;height:36px;background:none;border:0;color:inherit;font:600 1.2rem var(--body);cursor:pointer;border-radius:999px}
+.stepper button:hover{background:rgba(251,241,218,.16)}
+.stepper span{min-width:22px;text-align:center;font-weight:700}
+.menu-note{margin-top:20px;color:var(--muted);font-size:.95rem}
+
+/* Story */
+.story{background:var(--surface);border-block:1px solid var(--line)}
+.story .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+.story p{margin:0 0 16px;max-width:36rem}
+.facts{margin:0;border-top:3px solid var(--rose)}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--display);font-size:1.35rem;margin-bottom:2px}
+.facts dd{margin:0;color:var(--muted)}
+
+/* Reviews */
+.reviews-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px 48px}
+.quote-big{grid-row:span 2;margin:0;padding:8px 0 8px 28px;border-left:5px solid var(--marigold)}
+.quote-big p{font-family:var(--display);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.25;margin:0 0 16px}
+.quote-sm{margin:0;padding-top:16px;border-top:1px solid var(--line)}
+.quote-sm p{margin:0 0 8px}
+.who{color:var(--muted);font-size:.96rem}
+.stars{color:var(--accent-text);letter-spacing:2px;font-size:1.05rem}
+
+/* Visit */
+.visit{background:var(--teal);color:var(--cream)}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.visit h2{color:var(--marigold)}
+.info{margin:0 0 24px;padding:0;list-style:none}
+.info li{padding:14px 0;border-bottom:1px solid rgba(251,241,218,.22)}
+.info b{display:block;font-weight:600;color:var(--marigold)}
+.panel{background:var(--surface);color:var(--ink);border-radius:18px;padding:28px}
+.panel h3{font-family:var(--display);font-weight:400;font-size:1.7rem;margin:0 0 4px}
+.panel p{margin:0 0 18px;color:var(--muted)}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:600;margin-bottom:4px}
+.field input,.field select{width:100%;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:1rem var(--body)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.panel .btn{width:100%;margin-top:6px}
+
+/* Footer */
+.foot{background:var(--teal);color:rgba(251,241,218,.85);padding:26px 0 96px;font-size:.95rem}
+.foot .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+
+/* Order tray */
+.tray{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--teal);color:var(--cream);box-shadow:0 -6px 24px rgba(0,0,0,.25)}
+.tray[hidden]{display:none}
+.tray .wrap{display:flex;align-items:center;gap:14px;padding:12px 0}
+.tray .sum{flex:1;line-height:1.25}
+.tray .sum strong{display:block;font-size:1.05rem}
+.tray .sum span{font-size:.92rem;opacity:.85}
+.tray-clear{background:none;border:0;color:var(--cream);text-decoration:underline;font:500 .95rem var(--body);cursor:pointer;padding:8px}
+
+/* Mobile */
+@media (max-width:860px){
+  .nav{display:none}
+  .hero .wrap{grid-template-columns:1fr;padding:36px 0 44px}
+  .grill{max-width:380px;margin:0 auto}
+  .menu-list{grid-template-columns:1fr}
+  .story .wrap,.visit .wrap,.reviews-grid{grid-template-columns:1fr;gap:32px}
+  .quote-big{grid-row:auto}
+  .section{padding:52px 0}
+}
+@media (max-width:480px){
+  body{font-size:16px}
+  .tray .wrap{flex-wrap:wrap}
+  .tray .btn{flex:1 1 100%}
+  .row2{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .coal,.smoke path{animation:none}
+  .smoke path{opacity:.35}
+  .btn{transition:none}
+}
+
+/* AI assistant */
+.ai-fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;align-items:center;gap:10px;background:var(--marigold);color:#1B2B2A;border:0;border-radius:999px;padding:13px 20px;font:700 1rem var(--body);cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.ai-fab[hidden]{display:none}
+.ai-fab svg{width:22px;height:22px}
+body.has-tray .ai-fab{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+.ai-panel{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;width:min(390px,100% - 24px);height:min(580px,calc(100vh - 40px));display:flex;flex-direction:column;background:var(--surface);color:var(--ink);border-radius:20px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.4);overflow:hidden}
+.ai-panel[hidden]{display:none}
+.ai-head{background:var(--teal);color:var(--cream);padding:14px 16px;display:flex;align-items:center;gap:10px}
+.ai-head b{display:block;font-family:var(--display);font-size:1.25rem;font-weight:400;color:var(--marigold)}
+.ai-head small{display:block;opacity:.85;font-size:.82rem;line-height:1.3}
+.ai-close{margin-left:auto;background:none;border:0;color:var(--cream);font-size:1.8rem;cursor:pointer;line-height:1;padding:0 4px}
+.ai-msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.ai-m{max-width:88%;padding:10px 13px;border-radius:16px;font-size:.98rem;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.ai-m.bot{background:var(--surface);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.ai-m.me{background:var(--teal);color:var(--cream);align-self:flex-end;border-bottom-right-radius:4px}
+.ai-m.act{align-self:flex-start;color:var(--muted);font-size:.86rem;padding:0 4px}
+.ai-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px;background:var(--bg)}
+.ai-chips:empty{display:none}
+.ai-chip{border:1.5px solid var(--teal-2);background:transparent;color:var(--ink);border-radius:999px;padding:6px 12px;font:500 .88rem var(--body);cursor:pointer;text-align:left}
+.ai-chip:hover{background:var(--surface)}
+.ai-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--surface)}
+.ai-form input{flex:1;min-width:0;padding:11px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:1rem var(--body)}
+.ai-form button{border:0;background:var(--marigold);color:#1B2B2A;font:700 1rem var(--body);border-radius:999px;padding:0 18px;cursor:pointer}
+.ai-form button[disabled]{opacity:.5;cursor:not-allowed}
+.ai-limit{padding:8px 14px;color:var(--muted);font-size:.85rem;background:var(--surface);border-top:1px solid var(--line)}
+.ai-limit[hidden]{display:none}
+@media (max-width:560px){
+  .ai-panel{right:8px;left:8px;bottom:8px;width:auto;height:min(78vh,640px)}
+  .ai-fab span{display:none}
+  .ai-fab{padding:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head on-teal">
+  <div class="wrap">
+    <a class="brand" href="#top">Angeethi</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#story">Our story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-gold head-cta" id="headWa" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero on-teal">
+    <div class="wrap">
+      <div>
+        <span class="status"><span class="dot" id="dot"></span><span id="statusText">Open today from 12:00 pm</span></span>
+        <h1><span class="l1">Charcoal first.</span><span>Everything else after.</span></h1>
+        <p class="lead">Tikka, seekh kebab and karahi cooked over real coal, the way Gujranwala has been grilling for generations. Dine in, take away, or order on WhatsApp.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#menu">See the menu</a>
+          <a class="btn btn-line" href="#visit">Book a table</a>
+        </div>
+      </div>
+      <svg class="grill" viewBox="0 0 440 392" role="img" aria-label="Skewers of tikka over glowing charcoal">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#F4B41A" stop-opacity=".5"/>
+            <stop offset="1" stop-color="#F4B41A" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="220" cy="205" r="205" fill="url(#glow)"/>
+        <g class="smoke" fill="none" stroke="#FBF1DA" stroke-width="5" stroke-linecap="round">
+          <path d="M150 104 C132 86 168 70 150 50"/>
+          <path d="M220 96 C202 76 238 60 220 38" style="animation-delay:1.1s"/>
+          <path d="M290 104 C272 86 308 70 290 50" style="animation-delay:2.2s"/>
+        </g>
+        <path d="M130 322 L108 386 M310 322 L332 386" stroke="#062B28" stroke-width="10" stroke-linecap="round"/>
+        <path d="M52 212 H388 C388 298 322 350 220 350 C118 350 52 298 52 212Z" fill="#1B2524"/>
+        <path d="M78 252 C134 274 306 274 362 252" stroke="#F4B41A" stroke-width="4" fill="none" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <path d="M96 282 C150 302 290 302 344 282" stroke="#D8345F" stroke-width="4" fill="none" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <ellipse cx="220" cy="212" rx="168" ry="26" fill="#3A1714"/>
+        <g>
+          <ellipse class="coal" cx="82"  cy="212" rx="18" ry="9" fill="#D8345F"/>
+          <ellipse class="coal" cx="116" cy="207" rx="20" ry="9" fill="#F4B41A"/>
+          <ellipse class="coal" cx="150" cy="215" rx="19" ry="9" fill="#D8345F"/>
+          <ellipse class="coal" cx="184" cy="208" rx="20" ry="9" fill="#F4B41A"/>
+          <ellipse class="coal" cx="218" cy="216" rx="20" ry="9" fill="#D8345F"/>
+          <ellipse class="coal" cx="252" cy="208" rx="20" ry="9" fill="#F4B41A"/>
+          <ellipse class="coal" cx="286" cy="215" rx="19" ry="9" fill="#D8345F"/>
+          <ellipse class="coal" cx="320" cy="207" rx="20" ry="9" fill="#F4B41A"/>
+          <ellipse class="coal" cx="354" cy="212" rx="18" ry="9" fill="#D8345F"/>
+        </g>
+        <g stroke="#D6DAD6" stroke-width="4" stroke-linecap="round">
+          <line x1="40" y1="152" x2="404" y2="152"/>
+          <line x1="40" y1="190" x2="404" y2="190"/>
+        </g>
+        <g>
+          <rect x="72"  y="137" width="46" height="30" rx="13" fill="#A8452B"/>
+          <rect x="122" y="137" width="38" height="30" rx="13" fill="#3F9B5A"/>
+          <rect x="164" y="137" width="46" height="30" rx="13" fill="#8E3520"/>
+          <rect x="214" y="137" width="38" height="30" rx="13" fill="#F3D3DA"/>
+          <rect x="256" y="137" width="46" height="30" rx="13" fill="#A8452B"/>
+          <rect x="306" y="137" width="38" height="30" rx="13" fill="#3F9B5A"/>
+          <rect x="94"  y="175" width="46" height="30" rx="13" fill="#8E3520"/>
+          <rect x="144" y="175" width="38" height="30" rx="13" fill="#F3D3DA"/>
+          <rect x="186" y="175" width="46" height="30" rx="13" fill="#A8452B"/>
+          <rect x="236" y="175" width="38" height="30" rx="13" fill="#3F9B5A"/>
+          <rect x="278" y="175" width="46" height="30" rx="13" fill="#8E3520"/>
+        </g>
+        <circle cx="404" cy="152" r="8" fill="#F4B41A"/>
+        <circle cx="404" cy="190" r="8" fill="#F4B41A"/>
+      </svg>
+    </div>
+    <svg class="strip" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="zig" width="32" height="16" patternUnits="userSpaceOnUse">
+          <rect width="32" height="16" fill="#D8345F"/>
+          <path d="M0 16 L8 3 L16 16 L24 3 L32 16Z" fill="#F4B41A"/>
+          <circle cx="8" cy="12" r="1.8" fill="#0B4F4A"/>
+          <circle cx="24" cy="12" r="1.8" fill="#0B4F4A"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="16" fill="url(#zig)"/>
+    </svg>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="wrap">
+      <h2>The menu</h2>
+      <p class="section-intro">Tap Add on anything you like. Your order goes straight to our WhatsApp, and we confirm the time by reply.</p>
+      <div class="tabs" role="tablist" aria-label="Menu categories" id="tabs"></div>
+      <ul class="menu-list" id="menuList"></ul>
+      <p class="menu-note">Prices include tax. Karahi is cooked fresh to order and takes about 25 minutes.</p>
+    </div>
+  </section>
+
+  <section class="section story" id="story">
+    <div class="wrap">
+      <div>
+        <h2>Same coal, same recipes, since 1998</h2>
+        <p>Angeethi started as a single grill outside a family home. The marinades still come from the same handwritten recipes, and the meat is still cut by hand every morning.</p>
+        <p>We cook on charcoal only. It is slower, and it is why the tikka has that smoky edge you will not get from a gas flame.</p>
+        <p>Bring your family, bring your office, or take a box home. Everyone gets a seat and a hot naan.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Charcoal only</dt><dd>No gas grills, no shortcuts.</dd></div>
+        <div><dt>Halal and fresh daily</dt><dd>Meat is delivered and cut every morning.</dd></div>
+        <div><dt>Family seating</dt><dd>Separate family hall, plus parking outside.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <h2>What guests say</h2>
+      <p class="section-intro">Sample reviews for this design. Replace them with your real Google reviews.</p>
+      <div class="reviews-grid">
+        <blockquote class="quote-big">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>The malai boti was so soft it did not need a knife. We drove in from Lahore just for it, and we will do it again.</p>
+          <div class="who">Ayesha R., family dinner</div>
+        </blockquote>
+        <blockquote class="quote-sm">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Ordered 12 seekh kebabs on WhatsApp and picked them up in 20 minutes. Still hot.</p>
+          <div class="who">Usman Tariq, takeaway</div>
+        </blockquote>
+        <blockquote class="quote-sm">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Clean tables, quick service, and the karahi tastes like home. Kids loved the kheer.</p>
+          <div class="who">Hina Malik, weekend lunch</div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit on-teal" id="visit">
+    <div class="wrap">
+      <div>
+        <h2>Come hungry</h2>
+        <ul class="info">
+          <li><b>Address</b>Main G.T. Road, Gujranwala</li>
+          <li><b>Hours</b>Every day, 12:00 pm to 12:00 am</li>
+          <li><b>Phone and WhatsApp</b>0300 1234567</li>
+        </ul>
+        <a class="btn btn-line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Gujranwala+G.T.+Road">Open in Google Maps</a>
+      </div>
+      <div class="panel">
+        <h3>Book a table</h3>
+        <p>Fill this in and we will confirm on WhatsApp.</p>
+        <form id="resForm">
+          <div class="field"><label for="rName">Your name</label><input id="rName" name="name" required autocomplete="name"></div>
+          <div class="row2">
+            <div class="field"><label for="rDate">Date</label><input id="rDate" name="date" type="date" required></div>
+            <div class="field"><label for="rTime">Time</label><input id="rTime" name="time" type="time" value="20:00" required></div>
+          </div>
+          <div class="field">
+            <label for="rGuests">Guests</label>
+            <select id="rGuests" name="guests">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option>
+              <option>6</option><option>8</option><option>10</option><option>12 or more</option>
+            </select>
+          </div>
+          <button class="btn btn-teal" type="submit">Send booking on WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot on-teal">
+  <div class="wrap">
+    <span>Angeethi Grill House, Main G.T. Road, Gujranwala</span>
+    <span>Sample website design. Name, menu and details are placeholders.</span>
+  </div>
+</footer>
+
+<div class="tray on-teal" id="tray" hidden>
+  <div class="wrap">
+    <div class="sum"><strong id="trayCount"></strong><span id="trayTotal"></span></div>
+    <button class="tray-clear" id="trayClear" type="button">Clear</button>
+    <a class="btn btn-gold" id="trayLink" href="#" target="_blank" rel="noopener">Send order on WhatsApp</a>
+  </div>
+</div>
+
+
+<button class="ai-fab" id="aiFab" type="button" aria-haspopup="dialog" aria-controls="aiPanel">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 01-11.600 7.100L4 20l1-4.600A8 8 0 1121 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/></svg>
+  <span>Ask our assistant</span>
+</button>
+<section class="ai-panel" id="aiPanel" role="dialog" aria-label="Angeethi ordering assistant" hidden>
+  <div class="ai-head">
+    <div><b>Angeethi assistant</b><small>Ask about the menu, build your order, book a table</small></div>
+    <button class="ai-close" id="aiClose" type="button" aria-label="Close assistant">&times;</button>
+  </div>
+  <div class="ai-msgs" id="aiMsgs" aria-live="polite"></div>
+  <div class="ai-chips" id="aiChips"></div>
+  <p class="ai-limit" id="aiLimit" hidden>You have reached the free message limit for this chat. Please continue on WhatsApp.</p>
+  <form class="ai-form" id="aiForm">
+    <input id="aiInput" type="text" autocomplete="off" maxlength="400" placeholder="Type here, English or Roman Urdu" aria-label="Your message">
+    <button type="submit" id="aiSend">Send</button>
+  </form>
+</section>
+<script>
+(function(){
+  var WA = "923001234567";               // replace with the restaurant's WhatsApp number (country code, no + or spaces)
+  var NAME = "Angeethi Grill House";
+
+  var MENU = [
+    {cat:"BBQ", items:[
+      {id:"tikka",  name:"Chicken tikka",       desc:"Leg piece in a yogurt and chilli marinade, grilled over coal.", price:420},
+      {id:"malai",  name:"Chicken malai boti",  desc:"Eight creamy boneless pieces, mild and juicy.", price:850, tag:"Guests' favourite"},
+      {id:"seekh",  name:"Mutton seekh kebab",  desc:"Four hand-pressed skewers with green chilli and coriander.", price:1150},
+      {id:"bihari", name:"Beef bihari boti",    desc:"Tender strips with raw papaya and roasted spices.", price:1050},
+      {id:"chapli", name:"Chapli kebab",        desc:"Two crisp-edged patties with tomato and pomegranate seed.", price:480, tag:"Spicy"}
+    ]},
+    {cat:"Karahi and handi", items:[
+      {id:"ckarahi", name:"Chicken karahi, half", desc:"Tomato, ginger and green chilli, finished on a high flame.", price:1350, tag:"Spicy"},
+      {id:"mkarahi", name:"Mutton karahi, half",  desc:"Slow-cooked until the meat leaves the bone.", price:2650},
+      {id:"handi",   name:"Chicken handi",        desc:"Creamy, mild and rich. Good with garlic naan.", price:1450},
+      {id:"daal",    name:"Daal mash",            desc:"Tempered with butter, garlic and fresh ginger.", price:380}
+    ]},
+    {cat:"Rice and bread", items:[
+      {id:"biryani", name:"Chicken biryani", desc:"Long-grain rice, whole spices and a boiled egg.", price:480},
+      {id:"pulao",   name:"Beef pulao",      desc:"Yakhni-style, served with raita.", price:520},
+      {id:"naan",    name:"Tandoori naan",   desc:"Baked to order.", price:40},
+      {id:"gnaan",   name:"Garlic naan",     desc:"Brushed with butter and fresh garlic.", price:90},
+      {id:"raita",   name:"Mint raita",      desc:"Cooling and lightly salted.", price:80}
+    ]},
+    {cat:"Chai and sweets", items:[
+      {id:"chai",   name:"Doodh patti chai", desc:"Strong, milky and sweet.", price:120},
+      {id:"kchai",  name:"Kashmiri chai",    desc:"Pink tea with crushed almonds and pistachio.", price:220},
+      {id:"lassi",  name:"Sweet lassi",      desc:"Thick, chilled, topped with cream.", price:250},
+      {id:"gulab",  name:"Gulab jamun, 2 pcs", desc:"Warm, soaked in cardamom syrup.", price:200},
+      {id:"kheer",  name:"Kheer",            desc:"Slow-cooked rice pudding with dry fruit.", price:250}
+    ]}
+  ];
+
+  var ITEMS = {};
+  MENU.forEach(function(c){ c.items.forEach(function(i){ ITEMS[i.id] = i; }); });
+
+  var active = 0;
+  var order = {};
+
+  var tabsEl = document.getElementById("tabs");
+  var listEl = document.getElementById("menuList");
+  var trayEl = document.getElementById("tray");
+
+  function fmt(n){ return "Rs " + n.toLocaleString("en-US"); }
+  function waLink(text){ return "https://wa.me/" + WA + "?text=" + encodeURIComponent(text); }
+
+  function renderTabs(){
+    tabsEl.innerHTML = "";
+    MENU.forEach(function(c, idx){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "tab";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-selected", idx === active ? "true" : "false");
+      b.textContent = c.cat;
+      b.addEventListener("click", function(){ active = idx; renderTabs(); renderMenu(); });
+      tabsEl.appendChild(b);
+    });
+  }
+
+  function renderMenu(){
+    var html = "";
+    MENU[active].items.forEach(function(i){
+      var q = order[i.id] || 0;
+      var ctrl = q > 0
+        ? '<div class="stepper"><button type="button" data-act="dec" data-id="'+i.id+'" aria-label="Remove one '+i.name+'">\u2212</button><span aria-live="polite">'+q+'</span><button type="button" data-act="inc" data-id="'+i.id+'" aria-label="Add one '+i.name+'">+</button></div>'
+        : '<button type="button" class="add" data-act="inc" data-id="'+i.id+'" aria-label="Add '+i.name+' to order">Add</button>';
+      html += '<li class="item"><div class="item-top"><span class="item-name">'+i.name+'</span><span class="leader"></span><span class="price">'+fmt(i.price)+'</span></div>'
+            + '<p class="item-desc">'+i.desc+'</p>'
+            + '<div class="item-foot">'+(i.tag ? '<span class="chip">'+i.tag+'</span>' : '')+ctrl+'</div></li>';
+    });
+    listEl.innerHTML = html;
+  }
+
+  function totals(){
+    var count = 0, sum = 0;
+    Object.keys(order).forEach(function(id){ count += order[id]; sum += order[id] * ITEMS[id].price; });
+    return {count:count, sum:sum};
+  }
+
+  function renderTray(){
+    var t = totals();
+    if(t.count === 0){
+      trayEl.hidden = true;
+      document.body.classList.remove("has-tray");
+      return;
+    }
+    trayEl.hidden = false;
+    document.body.classList.add("has-tray");
+    document.getElementById("trayCount").textContent = t.count + (t.count === 1 ? " item" : " items");
+    document.getElementById("trayTotal").textContent = "Total " + fmt(t.sum);
+    var lines = Object.keys(order).map(function(id){
+      return order[id] + " x " + ITEMS[id].name + " (" + fmt(order[id] * ITEMS[id].price) + ")";
+    });
+    var msg = "Hello " + NAME + "! I would like to order:\n" + lines.join("\n") + "\nTotal: " + fmt(t.sum) + "\nPlease confirm pickup or delivery time.";
+    document.getElementById("trayLink").href = waLink(msg);
+  }
+
+  listEl.addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-act]");
+    if(!btn) return;
+    var id = btn.getAttribute("data-id");
+    var act = btn.getAttribute("data-act");
+    order[id] = (order[id] || 0) + (act === "inc" ? 1 : -1);
+    if(order[id] <= 0) delete order[id];
+    renderMenu();
+    renderTray();
+    var next = listEl.querySelector('[data-id="'+id+'"][data-act="'+act+'"]') || listEl.querySelector('[data-id="'+id+'"]');
+    if(next) next.focus({preventScroll:true});
+  });
+
+  document.getElementById("trayClear").addEventListener("click", function(){
+    order = {};
+    renderMenu();
+    renderTray();
+  });
+
+  // Open / closed status in Pakistan time
+  function renderStatus(){
+    var h = 12;
+    try{
+      var s = new Intl.DateTimeFormat("en-GB", {timeZone:"Asia/Karachi", hour:"numeric", hour12:false}).format(new Date());
+      h = parseInt(s, 10) % 24;
+    }catch(err){}
+    var open = h >= 12;
+    document.getElementById("dot").className = "dot" + (open ? "" : " closed");
+    document.getElementById("statusText").textContent = open ? "Open now, until 12:00 am" : "Closed now, opens at 12:00 pm";
+  }
+
+  // Booking form
+  var dateEl = document.getElementById("rDate");
+  var today = new Date();
+  var iso = today.getFullYear() + "-" + String(today.getMonth()+1).padStart(2,"0") + "-" + String(today.getDate()).padStart(2,"0");
+  dateEl.min = iso;
+  dateEl.value = iso;
+
+  document.getElementById("resForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = e.target;
+    var msg = "Hello " + NAME + "! I would like to book a table.\nName: " + f.name.value +
+              "\nGuests: " + f.guests.value + "\nDate: " + f.date.value + "\nTime: " + f.time.value;
+    window.open(waLink(msg), "_blank", "noopener");
+  });
+
+  document.getElementById("headWa").href = waLink("Hello " + NAME + "! I would like to place an order.");
+
+
+  // ---- Hooks used by the AI assistant (it can act on the page, the customer still confirms) ----
+  function orderSummary(){
+    var ids = Object.keys(order), sum = 0, count = 0;
+    var items = ids.map(function(id){
+      var q = order[id], line = q * ITEMS[id].price;
+      sum += line; count += q;
+      return {item_id:id, name:ITEMS[id].name, quantity:q, line_total_rs:line};
+    });
+    return {items:items, item_count:count, total_rs:sum};
+  }
+  function statusInfo(){
+    var h = 12;
+    try{
+      var s = new Intl.DateTimeFormat("en-GB", {timeZone:"Asia/Karachi", hour:"numeric", hour12:false}).format(new Date());
+      h = parseInt(s, 10) % 24;
+    }catch(err){}
+    var open = h >= 12;
+    return {open:open, hours:"Every day, 12:00 pm to 12:00 am (Pakistan time)", note: open ? "Open now" : "Closed now, opens at 12:00 pm"};
+  }
+  window.AngeethiShop = {
+    add: function(id, qty){
+      if(!ITEMS[id]) return {ok:false, error:"Unknown item_id"};
+      qty = Math.max(1, Math.min(20, parseInt(qty, 10) || 1));
+      order[id] = Math.min(20, (order[id] || 0) + qty);
+      renderMenu(); renderTray();
+      var r = orderSummary(); r.ok = true; return r;
+    },
+    remove: function(id, qty){
+      if(!order[id]) return {ok:false, error:"That item is not in the order"};
+      var q = parseInt(qty, 10);
+      if(!q || q >= order[id]) delete order[id]; else order[id] -= q;
+      renderMenu(); renderTray();
+      var r = orderSummary(); r.ok = true; return r;
+    },
+    view: function(){ var r = orderSummary(); r.ok = true; return r; },
+    clear: function(){
+      order = {};
+      renderMenu(); renderTray();
+      var r = orderSummary(); r.ok = true; return r;
+    },
+    status: function(){ var r = statusInfo(); r.ok = true; return r; },
+    fillBooking: function(d){
+      d = d || {};
+      var g = parseInt(d.guests, 10);
+      if(!g || g < 1) return {ok:false, error:"guests must be a number"};
+      var date = String(d.date || "");
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(date) || date < dateEl.min) return {ok:false, error:"date must be YYYY-MM-DD and not in the past"};
+      var mm = /^(\d{2}):(\d{2})$/.exec(String(d.time || ""));
+      if(!mm) return {ok:false, error:"time must be HH:MM in 24 hour format"};
+      var mins = parseInt(mm[1], 10) * 60 + parseInt(mm[2], 10);
+      if(mins < 720 || mins > 1410) return {ok:false, error:"Bookings are taken between 12:00 and 23:30"};
+      var opt = g <= 6 ? String(g) : (g <= 8 ? "8" : (g <= 10 ? "10" : "12 or more"));
+      if(d.name) document.getElementById("rName").value = String(d.name).slice(0, 60);
+      document.getElementById("rGuests").value = opt;
+      dateEl.value = date;
+      document.getElementById("rTime").value = mm[1] + ":" + mm[2];
+      return {ok:true, guests_selected:opt, date:date, time:mm[1] + ":" + mm[2], note:"Form is filled in but NOT sent. The customer must review it and tap Send booking on WhatsApp."};
+    }
+  };
+
+  renderTabs();
+  renderMenu();
+  renderTray();
+  renderStatus();
+})();
+</script>
+
+<script>
+(function(){
+  var API = "/api/chat";
+  var fab = document.getElementById("aiFab");
+  var panel = document.getElementById("aiPanel");
+  var msgs = document.getElementById("aiMsgs");
+  var chipsEl = document.getElementById("aiChips");
+  var form = document.getElementById("aiForm");
+  var input = document.getElementById("aiInput");
+  var sendBtn = document.getElementById("aiSend");
+  var closeBtn = document.getElementById("aiClose");
+
+  var history = [];
+  var busy = false;
+  var greeted = false;
+  var MAX_TURNS = 3;                 // how many messages one customer can send per visit
+  var turnsUsed = 0;
+  var limitBar = document.getElementById("aiLimit");
+
+  function turnsLeft(){ return MAX_TURNS - turnsUsed; }
+  function applyLimitUI(){
+    var left = turnsLeft();
+    if(left <= 0){
+      limitBar.hidden = false;
+      input.disabled = true;
+      sendBtn.disabled = true;
+      chipsEl.innerHTML = "";
+    } else {
+      input.placeholder = "Type here, English or Roman Urdu (" + left + " message" + (left === 1 ? "" : "s") + " left)";
+    }
+  }
+
+  function addMsg(text, who){
+    var d = document.createElement("div");
+    d.className = "ai-m " + who;
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  }
+
+  function setBusy(b){
+    busy = b;
+    sendBtn.disabled = b;
+  }
+
+  function greet(){
+    greeted = true;
+    addMsg("Assalam o Alaikum! I am the Angeethi assistant. Tell me what you feel like eating and I will put your order together. Aap Urdu ya Roman Urdu mein bhi likh sakte hain.", "bot");
+    ["What do you recommend for 4 people?", "Mujhe kuch spicy chahiye", "Book a table for tomorrow at 8 pm"].forEach(function(t){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ai-chip";
+      b.textContent = t;
+      b.addEventListener("click", function(){ send(t); });
+      chipsEl.appendChild(b);
+    });
+  }
+
+  function openPanel(){
+    panel.hidden = false;
+    fab.hidden = true;
+    if(!greeted) greet();
+    input.focus();
+  }
+  function closePanel(){
+    panel.hidden = true;
+    fab.hidden = false;
+    fab.focus();
+  }
+
+  function runTool(name, args){
+    var S = window.AngeethiShop;
+    try{
+      switch(name){
+        case "add_to_order": return S.add(args.item_id, args.quantity);
+        case "remove_from_order": return S.remove(args.item_id, args.quantity);
+        case "view_order": return S.view();
+        case "clear_order": return S.clear();
+        case "check_open_status": return S.status();
+        case "prepare_table_booking": return S.fillBooking(args);
+      }
+    }catch(e){
+      return {ok:false, error:"Something went wrong"};
+    }
+    return {ok:false, error:"Unknown tool"};
+  }
+
+  function actionLabel(name, out){
+    if(!out || !out.ok) return "";
+    if(name === "add_to_order") return "Added to your order. Total so far: Rs " + out.total_rs.toLocaleString("en-US");
+    if(name === "remove_from_order") return "Removed from your order. Total: Rs " + out.total_rs.toLocaleString("en-US");
+    if(name === "clear_order") return "Order cleared";
+    if(name === "prepare_table_booking") return "Booking form filled in on the page (not sent yet)";
+    return "";
+  }
+
+  async function run(){
+    setBusy(true);
+    var typing = addMsg("Typing...", "act");
+    try{
+      for(var step = 0; step < 6; step++){
+        var r = await fetch(API, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({messages:history})});
+        var data = {};
+        try{ data = await r.json(); }catch(e){}
+        if(!r.ok) throw new Error((data && data.error) || "error");
+        var calls = data.toolCalls || [];
+        history.push({role:"assistant", text:data.text || "", toolCalls:calls});
+        if(data.text) addMsg(data.text, "bot");
+        if(!calls.length) break;
+        var results = calls.map(function(c){
+          var out = runTool(c.name, c.input || {});
+          var label = actionLabel(c.name, out);
+          if(label) addMsg(label, "act");
+          return {id:c.id, name:c.name, output:out};
+        });
+        history.push({role:"tool", results:results});
+      }
+    }catch(e){
+      var text = (e && e.message === "not_configured")
+        ? "The assistant is not switched on yet. You can still order from the menu below."
+        : (e && e.message === "rate_limited")
+          ? "Too many messages for now. Please try again in a few minutes."
+          : "Sorry, something went wrong. Please try again, or order from the menu below.";
+      addMsg(text, "bot");
+    }
+    typing.remove();
+    setBusy(false);
+    input.focus();
+  }
+
+  function send(text){
+    text = (text || "").trim();
+    if(!text || busy || turnsLeft() <= 0) return;
+    chipsEl.innerHTML = "";
+    addMsg(text, "me");
+    turnsUsed++;
+    applyLimitUI();
+    if(history.length > 34) history = [];
+    history.push({role:"user", content:text});
+    input.value = "";
+    run();
+  }
+
+  fab.addEventListener("click", openPanel);
+  closeBtn.addEventListener("click", closePanel);
+  panel.addEventListener("keydown", function(e){ if(e.key === "Escape") closePanel(); });
+  form.addEventListener("submit", function(e){ e.preventDefault(); send(input.value); });
+})();
+</script>
+</body>
+</html>
